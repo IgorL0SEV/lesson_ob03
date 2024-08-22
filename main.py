@@ -87,3 +87,15 @@ class Zoo():
   def show_personell (self): # перечень персонала
     for person in self.personnel:
       print (f"{person.name}\n{person.age} лет\n{person.profession}\n")
+
+  def save_to_file(self, filename):
+    with open(filename, 'wb') as file:
+        pickle.dump(self, file)
+    print(f"Данные зоопарка сохранены в файл: {filename}")
+
+  @staticmethod
+  def load_from_file(filename):
+    with open(filename, 'rb') as file:
+        zoo = pickle.load(file)
+    print(f"Данные зоопарка загружены из файла: {filename}")
+    return zoo
