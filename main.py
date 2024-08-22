@@ -57,9 +57,33 @@ def animal_sound(animals):
   for animal in animals:
     print (f"{animal.make_sound()}")
 
-
 parrot = Bird("Gosha", "5") # создали объект класса - птичка
 giraffe = Mammal("Stepa", "3") # создали объект класса - млекопитающее
 varan = Reptile("Petya", "9") # создали объект класса - рептилию
 
 
+# 4. Используйте композицию для создания класса `Zoo`, который будет содержать
+# информацию о животных и сотрудниках. Должны быть методы для добавления животных и сотрудников в зоопарк.
+
+class Zoo():
+  def __init__(self):
+    self.animals = [] # список животных Zoo
+    self.personnel = [] # список персонала Zoo
+
+  def add_animal (self, animals): # добавление в Zoo животных
+    self.animals.append(animals)
+
+  def add_personell (self, personel): # добавление в Zoo персонала
+    self.personnel.append(personel)
+
+  def show_animals_sound (self): # перечень звуков животных
+    for animal in self.animals:
+      print (f"{animal.make_sound()}")
+
+  def show_animals (self): # перечень животных
+    for animal in self.animals:
+      print (f"{animal.name}\n{animal.age} лет\n{animal.make_sound()}\n{animal.eat()}\n")
+
+  def show_personell (self): # перечень персонала
+    for person in self.personnel:
+      print (f"{person.name}\n{person.age} лет\n{person.profession}\n")
