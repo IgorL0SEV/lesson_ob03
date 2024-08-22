@@ -49,3 +49,17 @@ class Reptile(Animal):
   def eat(self):
     return f"{self.name} - заглатывает корм"
 
+
+# 3. Продемонстрируйте полиморфизм: создайте функцию `animal_sound(animals)`,
+# которая принимает список животных и вызывает метод `make_sound()` для каждого животного
+
+def animal_sound(animals):
+  for animal in animals:
+    print (f"{animal.make_sound()}")
+
+
+parrot = Bird("Gosha", "5") # создали объект класса - птичка
+giraffe = Mammal("Stepa", "3") # создали объект класса - млекопитающее
+varan = Reptile("Petya", "9") # создали объект класса - рептилию
+
+
