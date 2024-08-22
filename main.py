@@ -99,3 +99,28 @@ class Zoo():
         zoo = pickle.load(file)
     print(f"Данные зоопарка загружены из файла: {filename}")
     return zoo
+
+  # 5. Создайте классы для сотрудников, например, `ZooKeeper`, `Veterinarian`,
+  # которые могут иметь специфические методы (например, `feed_animal()` для `ZooKeeper` и
+  # `heal_animal()` для `Veterinarian`).
+
+  class ZooKeeper():
+    def __init__(self, name, age, profession):
+      self.name = name
+      self.age = age
+      self.profession = profession
+
+    def feed_animal(self):
+      return f"животное покормлено"
+
+  class Veterinarian():
+    def __init__(self, name, age, profession):
+      self.name = name
+      self.age = age
+      self.profession = profession
+
+    def heal_animal(self):
+      return f"животному сделан профилактический осмотр"
+
+  zookeeper = ZooKeeper("Сидоров", "29 лет", "Уход за животными")
+  veterinarian = Veterinarian("Петров", "35 лет", "Лечение животных")
