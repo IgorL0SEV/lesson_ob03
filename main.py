@@ -100,27 +100,52 @@ class Zoo():
     print(f"Данные зоопарка загружены из файла: {filename}")
     return zoo
 
-  # 5. Создайте классы для сотрудников, например, `ZooKeeper`, `Veterinarian`,
-  # которые могут иметь специфические методы (например, `feed_animal()` для `ZooKeeper` и
-  # `heal_animal()` для `Veterinarian`).
+# 5. Создайте классы для сотрудников, например, `ZooKeeper`, `Veterinarian`,
+# которые могут иметь специфические методы (например, `feed_animal()` для `ZooKeeper` и
+# `heal_animal()` для `Veterinarian`).
 
-  class ZooKeeper():
-    def __init__(self, name, age, profession):
-      self.name = name
-      self.age = age
-      self.profession = profession
+class ZooKeeper():
+  def __init__(self, name, age, profession):
+    self.name = name
+    self.age = age
+    self.profession = profession
 
-    def feed_animal(self):
-      return f"животное покормлено"
+  def feed_animal(self):
+    return f"животное покормлено"
 
-  class Veterinarian():
-    def __init__(self, name, age, profession):
-      self.name = name
-      self.age = age
-      self.profession = profession
+class Veterinarian():
+  def __init__(self, name, age, profession):
+    self.name = name
+    self.age = age
+    self.profession = profession
 
-    def heal_animal(self):
-      return f"животному сделан профилактический осмотр"
+  def heal_animal(self):
+    return f"животному сделан профилактический осмотр"
 
-  zookeeper = ZooKeeper("Сидоров", "29 лет", "Уход за животными")
-  veterinarian = Veterinarian("Петров", "35 лет", "Лечение животных")
+zookeeper = ZooKeeper("Сидоров", "29 лет", "Уход за животными")
+veterinarian = Veterinarian("Петров", "35 лет", "Лечение животных")
+
+
+# добавление объектов класса и примеры вывода
+zoo = Zoo()
+zoo.add_animal(parrot)
+zoo.add_animal(giraffe)
+zoo.add_animal(varan)
+zoo.add_personell(zookeeper)
+zoo.add_personell(veterinarian)
+
+print("Список животных с описанием")
+zoo.show_animals()  # список животных с характеристиками
+print()
+
+print("Список только звуков")
+zoo.show_animals_sound()  # список только звуков
+print()
+
+print("Список звуков через полиморфизм")
+animal_sound(zoo.animals)  # список звуков полиморфизм
+print()
+
+print("Список персонала.")
+zoo.show_personell()
+
